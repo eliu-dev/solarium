@@ -1,0 +1,24 @@
+# Node.js dependencies
+node_modules
+
+# TypeScript build output
+dist
+
+# Environment variables
+.env
+
+# Docker build files
+Dockerfile
+.dockerignore
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+*.txt
