@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import { OPEN_UV_BASE_URL } from './OpenUV.js';
+import { OPEN_UV_BASE_URL } from './OpenUv.js';
 import * as dotenv from 'dotenv'
 dotenv.config();
 
@@ -12,10 +12,11 @@ app.get('/', (_req, res) => {
     res.send('Success');
 })
 
-app.get('/uv', async (_req, res) => {
-    const lng = -122.25;
-    const lat = 37.8;
-    const alt = 100;
+app.get('/uv', async (req, res) => {
+    const query = req.query;
+    const lng = query.lng ? query.lng : -122.5;
+    const lat = query.lat ? query.lat : 37.8;
+    const alt = query.alt ? query.alt : 100;
     const results = await axios.get(OPEN_UV_BASE_URL + `/uv?lat=${lat}&lng=${lng}&alt=${alt}`, {
         headers: {
             "x-access-token": process.env.OPEN_UV_AUTH_TOKEN
