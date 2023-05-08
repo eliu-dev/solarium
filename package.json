@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon dist/app.js",
     "start": "node dist/app.js",
-    "build": "tsc --clean & tsc -w"
+    "build": "tsc --clean & tsc -w",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +24,7 @@
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.8",
