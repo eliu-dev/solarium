@@ -17,14 +17,11 @@ app.get('/uv', async (req, res) => {
   const lng = query.lng ? query.lng : -122.5;
   const lat = query.lat ? query.lat : 37.8;
   const alt = query.alt ? query.alt : 100;
-  const results = await axios.get(
-    OPEN_UV_BASE_URL + `/uv?lat=${lat}&lng=${lng}&alt=${alt}`,
-    {
-      headers: {
-        'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
-      },
+  const results = await axios.get(OPEN_UV_BASE_URL + `/uv?lat=${lat}&lng=${lng}&alt=${alt}`, {
+    headers: {
+      'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
     },
-  );
+  });
   const successCode = new RegExp(/[2]{1}[0-9]{2}/);
   if (successCode.test(results.status.toString())) {
     res.json(results.data);
@@ -39,14 +36,11 @@ app.get('/uv-forecast', async (_req, res) => {
   const alt = 100;
 
   try {
-    const results = await axios.get(
-      OPEN_UV_BASE_URL + `/forecast?lat=${lat}&lng=${lng}&alt=${alt}`,
-      {
-        headers: {
-          'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
-        },
+    const results = await axios.get(OPEN_UV_BASE_URL + `/forecast?lat=${lat}&lng=${lng}&alt=${alt}`, {
+      headers: {
+        'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
       },
-    );
+    });
 
     const successCode = new RegExp(/[2]{1}[0-9]{2}/);
     if (successCode.test(results.status.toString())) {

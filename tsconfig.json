@@ -16,7 +16,7 @@
       "skipLibCheck": true,
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
-      "experimentalDecorators": true,
+      "experimentalDecorators": true, // Supports MikroORM
       "emitDecoratorMetadata": true,
       "sourceMap": true,
       "outDir": "./dist",
