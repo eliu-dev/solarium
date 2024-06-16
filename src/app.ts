@@ -4,27 +4,27 @@ import { OPEN_UV_BASE_URL } from './OpenUv.js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+const DEFAULT_LONGITUDE = -74.5;
+const DEFAULT_LATITUDE = 40.5;
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000; // Google Cloud Run uses a .PORT environment variable by default to dynamically assign a port.
 
 app.get('/', (_req, res) => {
-  res.send('Success');
+  res.sendFile(import.meta.dirname + '/index.html');
+  //res.send(`${import.meta.dirname} and ${import.meta.filename}`);
 });
 
 app.get('/uv', async (req, res) => {
   const query = req.query;
-  const lng = query.lng ? query.lng : -122.5;
-  const lat = query.lat ? query.lat : 37.8;
+  const lng = query.lng ? query.lng : DEFAULT_LONGITUDE;
+  const lat = query.lat ? query.lat : DEFAULT_LATITUDE;
   const alt = query.alt ? query.alt : 100;
-  const results = await axios.get(
-    OPEN_UV_BASE_URL + `/uv?lat=${lat}&lng=${lng}&alt=${alt}`,
-    {
-      headers: {
-        'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
-      },
+  const results = await axios.get(OPEN_UV_BASE_URL + `/uv?lat=${lat}&lng=${lng}&alt=${alt}`, {
+    headers: {
+      'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
     },
-  );
+  });
   const successCode = new RegExp(/[2]{1}[0-9]{2}/);
   if (successCode.test(results.status.toString())) {
     res.json(results.data);
@@ -34,19 +34,16 @@ app.get('/uv', async (req, res) => {
 });
 
 app.get('/uv-forecast', async (_req, res) => {
-  const lng = -122.25;
-  const lat = 37.8;
+  const lng = DEFAULT_LONGITUDE;
+  const lat = DEFAULT_LATITUDE;
   const alt = 100;
 
   try {
-    const results = await axios.get(
-      OPEN_UV_BASE_URL + `/forecast?lat=${lat}&lng=${lng}&alt=${alt}`,
-      {
-        headers: {
-          'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
-        },
+    const results = await axios.get(OPEN_UV_BASE_URL + `/forecast?lat=${lat}&lng=${lng}&alt=${alt}`, {
+      headers: {
+        'x-access-token': process.env.OPEN_UV_AUTH_TOKEN,
       },
-    );
+    });
 
     const successCode = new RegExp(/[2]{1}[0-9]{2}/);
     if (successCode.test(results.status.toString())) {
