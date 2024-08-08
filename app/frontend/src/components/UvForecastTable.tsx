@@ -48,83 +48,8 @@ const defaultUvForecast: UvForecast = {
   result: [
     {
       uv: 0,
-      uv_time: '2024-06-20T09:28:50.705Z',
-      sun_position: { azimuth: -2.1330813002492697, altitude: -0.011736263235668598 },
-    },
-    {
-      uv: 0.1845,
-      uv_time: '2024-06-20T10:28:50.705Z',
-      sun_position: { azimuth: -1.9695871488128527, altitude: 0.1646798280903534 },
-    },
-    {
-      uv: 0.8061,
-      uv_time: '2024-06-20T11:28:50.705Z',
-      sun_position: { azimuth: -1.8157473682508611, altitude: 0.35334476331733516 },
-    },
-    {
-      uv: 2.0687,
-      uv_time: '2024-06-20T12:28:50.705Z',
-      sun_position: { azimuth: -1.6613316543203165, altitude: 0.5493841899697619 },
-    },
-    {
-      uv: 3.9431,
-      uv_time: '2024-06-20T13:28:50.705Z',
-      sun_position: { azimuth: -1.4916335983070734, altitude: 0.7481863391028922 },
-    },
-    {
-      uv: 6.3808,
-      uv_time: '2024-06-20T14:28:50.705Z',
-      sun_position: { azimuth: -1.2796109071237778, altitude: 0.9436564426663137 },
-    },
-    {
-      uv: 8.3523,
-      uv_time: '2024-06-20T15:28:50.705Z',
-      sun_position: { azimuth: -0.9635371250166279, altitude: 1.1233215692699194 },
-    },
-    {
-      uv: 9.508,
-      uv_time: '2024-06-20T16:28:50.705Z',
-      sun_position: { azimuth: -0.4076492587458935, altitude: 1.2518127943516313 },
-    },
-    {
-      uv: 9.508,
-      uv_time: '2024-06-20T17:28:50.705Z',
-      sun_position: { azimuth: 0.37952342730970406, altitude: 1.2547596334005673 },
-    },
-    {
-      uv: 8.3523,
-      uv_time: '2024-06-20T18:28:50.705Z',
-      sun_position: { azimuth: 0.9476900802037206, altitude: 1.1295970979071144 },
-    },
-    {
-      uv: 6.3808,
-      uv_time: '2024-06-20T19:28:50.705Z',
-      sun_position: { azimuth: 1.2699613485467824, altitude: 0.9510078313857698 },
-    },
-    {
-      uv: 4.1373,
-      uv_time: '2024-06-20T20:28:50.705Z',
-      sun_position: { azimuth: 1.4845077667251279, altitude: 0.7558479810001695 },
-    },
-    {
-      uv: 2.0687,
-      uv_time: '2024-06-20T21:28:50.705Z',
-      sun_position: { azimuth: 1.6552157066636357, altitude: 0.5570460867269876 },
-    },
-    {
-      uv: 0.8061,
-      uv_time: '2024-06-20T22:28:50.705Z',
-      sun_position: { azimuth: 1.8099057883460028, altitude: 0.36081658952363876 },
-    },
-    {
-      uv: 0.1845,
-      uv_time: '2024-06-20T23:28:50.705Z',
-      sun_position: { azimuth: 1.9635637241775463, altitude: 0.17178747218596063 },
-    },
-    {
-      uv: 0,
-      uv_time: '2024-06-21T00:28:50.705Z',
-      sun_position: { azimuth: 2.126522170935143, altitude: -0.005196843508169262 },
+      uv_time: '2024-01-01T00:00:00.000Z',
+      sun_position: { azimuth: 0, altitude: 0 },
     },
   ],
 };
