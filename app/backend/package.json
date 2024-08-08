@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"nodemon dist/index.js\" \"tsc --build --clean && tsc -w\"",
+    "build": "tsc --build --clean && tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  },
+  "type": "module"
+}
