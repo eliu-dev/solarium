@@ -3,6 +3,7 @@ import axios from 'axios';
 import { OPEN_UV_BASE_URL } from './OpenUv.js';
 import * as dotenv from 'dotenv';
 import path from 'path';
+import pingMongoDb from './mongo_server.js';
 
 dotenv.config();
 
@@ -13,7 +14,6 @@ app.use(express.json());
 app.use(express.static(path.join(import.meta.dirname, 'public')));
 
 const port = process.env.PORT || 3000; // Google Cloud Run uses a .PORT environment variable by default to dynamically assign a port.
-
 
 app.get('/', (_req, res) => {
   res.sendFile(import.meta.dirname + '/public/index.html');
@@ -100,6 +100,11 @@ app.get('/stat', async (_req, res) => {
 
 app.get('/now', async (_req, res) => {
   res.send(new Date().toISOString());
+});
+
+app.get('/db/mongo/ping', async (_req, res) => {
+  await pingMongoDb();
+  res.send('success');
 });
 
 app.listen(port, () => {
