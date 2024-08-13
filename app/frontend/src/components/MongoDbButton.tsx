@@ -17,7 +17,7 @@ async function handleMongoPing() {
   }
 }
 
-function MongoDbButton() {
+export function MongoDbButton() {
   return (
     <Toolbar variant="dense">
       <Storage />
@@ -26,5 +26,3 @@ function MongoDbButton() {
     </Toolbar>
   );
 }
-
-export default MongoDbButton;

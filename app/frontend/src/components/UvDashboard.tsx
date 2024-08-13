@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { UvForecast } from '../../../entities/UvStatus';
-import UvForecastTable from './UvForecastTable';
-import UvInputFields from './UvInputFields';
+import { UvForecastTable } from './UvForecastTable';
+import { UvInputFields } from './UvInputFields';
 import { Box } from '@mui/material';
 
-function UvDashboard() {
+export function UvDashboard() {
   const [uvForecast, setUvForecast] = useState<UvForecast>({ result: [] });
 
   function handleForecastUpdate(forecast: UvForecast) {
@@ -20,5 +20,3 @@ function UvDashboard() {
     </>
   );
 }
-
-export default UvDashboard;

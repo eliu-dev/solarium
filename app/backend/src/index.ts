@@ -1,12 +1,11 @@
 import express from 'express';
 import axios from 'axios';
 import { OPEN_UV_BASE_URL } from './OpenUv.js';
-import * as dotenv from 'dotenv';
 import path from 'path';
-import pingMongoDb from './mongo_server.js';
+import { mongoInstance } from './mongo_server.js';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
-
 const DEFAULT_LONGITUDE = -74.5;
 const DEFAULT_LATITUDE = 40.5;
 const app = express();
@@ -103,7 +102,7 @@ app.get('/now', async (_req, res) => {
 });
 
 app.get('/db/mongo/ping', async (_req, res) => {
-  await pingMongoDb();
+  await mongoInstance.connect();
   res.send('success');
 });
 

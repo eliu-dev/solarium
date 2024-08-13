@@ -19,10 +19,13 @@
     "experimentalDecorators": true, // Supports MikroORM
     "emitDecoratorMetadata": true,
     "sourceMap": true,
+    "rootDir": ".",
+    "outDir": "../backend/dist/entities",
     "types": ["node"],
     "lib": ["ES6", "DOM"],
+    "composite": true,
     "jsx": "react-jsx"
   },
-  "references": [{ "path": "./backend" }, { "path": "./entities" }],
+  "include": ["*.ts", "*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts"]
 }

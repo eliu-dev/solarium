@@ -26,6 +26,7 @@
     "composite": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "index.ts"],
+  "references": [{ "path": "../entities" }],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts"]
 }

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon dist/index.js\" \"tsc --build --clean && tsc -w\"",
-    "build": "tsc --build --clean && tsc -w"
+    "dev": "nodemon dist/index.js",
+    "build": "tsc --build && tsc -w"
   },
   "author": "",
   "license": "ISC",

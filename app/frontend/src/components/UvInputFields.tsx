@@ -28,7 +28,7 @@ function checkValidNumber(value: string): boolean {
   return checkValidNumber.test(value);
 }
 
-function UvInputFields({ onForecastUpdate }: { onForecastUpdate: (forecast: UvForecast) => void }) {
+export function UvInputFields({ onForecastUpdate }: { onForecastUpdate: (forecast: UvForecast) => void }) {
   const [userLocation, setUserLocation] = useState<UserLocation>({
     latitude: '',
     longitude: '',
@@ -150,5 +150,3 @@ function UvInputFields({ onForecastUpdate }: { onForecastUpdate: (forecast: UvFo
     </>
   );
 }
-
-export default UvInputFields;

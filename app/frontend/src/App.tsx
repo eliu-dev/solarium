@@ -1,6 +1,3 @@
-//import { useState } from 'react';
-//import reactLogo from './assets/react.svg';
-//import viteLogo from '/vite.svg';
 import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
 import './App.css';
 /* Material UI imports */
@@ -10,8 +7,9 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import UvDashboard from './components/UvDashboard';
+import { UvDashboard } from './components/UvDashboard';
 import { Toolbar, Typography } from '@mui/material';
+import { MongoDbButton } from './components/MongoDbButton';
 
 const darkTheme = createTheme({
   palette: {
@@ -42,6 +40,7 @@ function App() {
           >
             UV Dashboard
           </Typography>
+          <MongoDbButton />
         </Toolbar>
         <UvDashboard />
       </ThemeProvider>
