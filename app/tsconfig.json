@@ -23,6 +23,5 @@
     "lib": ["ES6", "DOM"],
     "jsx": "react-jsx"
   },
-  "references": [{ "path": "./backend" }, { "path": "./entities" }],
   "exclude": ["node_modules", "**/*.test.ts"]
 }

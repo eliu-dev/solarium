@@ -31,14 +31,14 @@ export class MongoDbClient implements DatabaseClient {
     });
   }
 
-  static getMongoDbInstance(): MongoDbClient {
+  static getInstance(): MongoDbClient {
     if (!MongoDbClient.instance) {
       MongoDbClient.instance = new MongoDbClient();
     }
     return MongoDbClient.instance;
   }
 
-  getMongoDbClient(): MongoClient {
+  getClient(): MongoClient {
     return this.client;
   }
 

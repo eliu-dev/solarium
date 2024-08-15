@@ -9,8 +9,10 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist",
     "start": "node dist/app.js",
-    "build": "concurrently \"npm run build:frontend\" \"npm run build:backend\"",
+    "build": "npm run clean && concurrently \"npm run build:frontend\" \"npm run build:backend\"",
+    "build:entities": "cd entities && tsc --build && tsc -w",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && npm run build",
     "dev": "npm run dev:backend",

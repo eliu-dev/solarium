@@ -1,5 +1,5 @@
-import { MongoDbClient } from '../dist/entities/MongoDbClient.js';
-export const mongoInstance = MongoDbClient.getMongoDbInstance();
+import { MongoDbClient } from '../../entities/MongoDbClient';
+export const mongoInstance = MongoDbClient.getInstance();
 // import { MongoClient, ServerApiVersion } from 'mongodb';
 // import * as dotenv from 'dotenv';
 

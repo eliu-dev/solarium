@@ -1,5 +1,5 @@
 export interface RepositoryEntity {
-  id?: string | number;
+  _id?: string | number;
   created?: Date;
-  lastUpdated?: Date;
+  last_updated?: Date;
 }

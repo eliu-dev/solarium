@@ -20,7 +20,7 @@
     "emitDecoratorMetadata": true,
     "sourceMap": true,
     "rootDir": ".",
-    "outDir": "../backend/dist/entities",
+    "outDir": "../dist/entities",
     "types": ["node"],
     "lib": ["ES6", "DOM"],
     "composite": true,

@@ -20,11 +20,12 @@
     "emitDecoratorMetadata": true,
     "sourceMap": true,
     "rootDir": "./src",
-    "outDir": "./dist",
+    "outDir": "../dist",
     "types": ["node"],
     "lib": ["ES6", "DOM"],
     "composite": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "tsBuildInfoFile": "../dist/tsbuildinfo"
   },
   "references": [{ "path": "../entities" }],
   "include": ["src/**/*.ts", "src/**/*.tsx"],

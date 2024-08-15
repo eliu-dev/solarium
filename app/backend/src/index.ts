@@ -1,8 +1,7 @@
 import express from 'express';
 import axios from 'axios';
-import { OPEN_UV_BASE_URL } from './OpenUv.js';
 import path from 'path';
-import { mongoInstance } from './mongo_server.js';
+import { mongoInstance } from './mongo_server';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,7 +12,7 @@ app.use(express.json());
 app.use(express.static(path.join(import.meta.dirname, 'public')));
 
 const port = process.env.PORT || 3000; // Google Cloud Run uses a .PORT environment variable by default to dynamically assign a port.
-
+const OPEN_UV_BASE_URL = process.env.OPEN_UV_BASE_URL ?? 'https://api.openuv.io/api/v1';
 app.get('/', (_req, res) => {
   res.sendFile(import.meta.dirname + '/public/index.html');
   //res.send(`${import.meta.dirname} and ${import.meta.filename}`);
