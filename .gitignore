@@ -3,7 +3,9 @@ node_modules
 
 # TypeScript build output
 dist
-*.tsbuildinfo
+*tsbuildinfo
+*d.ts
+vite.config.js
 
 # Environment variables
 .env

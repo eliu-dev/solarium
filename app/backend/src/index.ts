@@ -1,8 +1,8 @@
 import express from 'express';
 import axios from 'axios';
 import path from 'path';
-import { mongoInstance } from './mongo_server';
 import * as dotenv from 'dotenv';
+import { MongoDbClient } from '../../entities/MongoDbClient.js';
 
 dotenv.config();
 const DEFAULT_LONGITUDE = -74.5;
@@ -10,6 +10,8 @@ const DEFAULT_LATITUDE = 40.5;
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(import.meta.dirname, 'public')));
+
+export const mongoInstance = MongoDbClient.getInstance();
 
 const port = process.env.PORT || 3000; // Google Cloud Run uses a .PORT environment variable by default to dynamically assign a port.
 const OPEN_UV_BASE_URL = process.env.OPEN_UV_BASE_URL ?? 'https://api.openuv.io/api/v1';
