@@ -54,7 +54,7 @@ const defaultUvForecast: UvForecast = {
   ],
 };
 
-function UvForecastTable({ uvForecast }: { uvForecast: UvForecast }) {
+export function UvForecastTable({ uvForecast }: { uvForecast: UvForecast }) {
   if (uvForecast.result.length == 0) {
     uvForecast = defaultUvForecast;
   }
@@ -86,5 +86,3 @@ function UvForecastTable({ uvForecast }: { uvForecast: UvForecast }) {
     </TableContainer>
   );
 }
-
-export default UvForecastTable;

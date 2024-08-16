@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES2020",
+    "module": "ES2020",
     "moduleResolution": "node",
     "declaration": true,
     "strict": true,
@@ -19,11 +19,13 @@
     "experimentalDecorators": true, // Supports MikroORM
     "emitDecoratorMetadata": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "rootDir": ".",
+    "outDir": "../dist/entities",
     "types": ["node"],
     "lib": ["ES6", "DOM"],
+    "composite": true,
     "jsx": "react-jsx"
   },
-  "include": ["src/**/*.ts", "src/index.tsx", "src/**/*.html"],
+  "include": ["*.ts", "*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts"]
 }
